@@ -1,0 +1,21 @@
+E1
+1. To navigate to my home directory I used
+cd C:
+Or for my one containing my class info I used
+cd C:/Comp_Bio
+2. cd C:/Coding
+3. cd C:/Comp_Bio/IntroBiolComp-2026/Python
+4. While inside C:/Comp_Bio/IntroBiolComp-2026 to navigate into sandbox within Unix I
+did cd Unix/sandbox
+E2
+1. To navigate into the DataFiles directory in IntroBiolComp-2026/Python I wrote
+cd DataFiles while in IntroBiolComp-2026/Python
+2. To output the number of lines in BeeSpecies.txt I wrote
+wc –l BeeSpecies.txt and my output was 19509 BeeSpecies.txt
+3. To count the number of words in the CodonTable.tsv without leaving the current
+directory I wrote
+wc -w ../../Unix/DataFiles/CodonTable.tsv my output was
+195 ../../Unix/DataFiles/CodonTable.tsv
+4. I did not leave the directory so the code I wrote to find the last codon reported was
+tail ../../Unix/DataFiles/CodonTable.tsv and looking at my output, the last line was
+TTT Phe F
