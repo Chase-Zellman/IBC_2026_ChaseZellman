@@ -1,6 +1,6 @@
-#Practical 1
-##E1
-#1. To navigate to my home directory I used: 
+# Practical 1
+## E1
+# 1. To navigate to my home directory I used: 
 ```bash
 cd C:/ 
 ```
@@ -8,13 +8,13 @@ Or for my one containing my class info I used
 ```bash
 cd C:/Comp_Bio
 ```
-#2. ```bash
+# 2. ```bash
 cd C:/Coding
 ```
-#3. ```bash
+# 3. ```bash
 cd C:/Comp_Bio/IntroBiolComp-2026/Python
 ```
-#4. While inside 
+# 4. While inside 
 ```bash
 C:/Comp_Bio/IntroBiolComp-2026
 ```
@@ -22,13 +22,13 @@ to navigate into sandbox within Unix I did
 ```bash
 cd Unix/sandbox
 ```
-##E2
-#1. To navigate into the DataFiles directory in IntroBiolComp-2026/Python I wrote
+## E2
+# 1. To navigate into the DataFiles directory in IntroBiolComp-2026/Python I wrote
 ```bash
 cd DataFiles
 ```
 while in IntroBiolComp-2026/Python
-#2. To output the number of lines in BeeSpecies.txt I wrote
+# 2. To output the number of lines in BeeSpecies.txt I wrote
 ``bash
 wc –l BeeSpecies.txt
 ``
@@ -36,7 +36,7 @@ and my output was
 ```bash
 19509 BeeSpecies.txt 
 ```
-#3. To count the number of words in the CodonTable.tsv without leaving the current
+# 3. To count the number of words in the CodonTable.tsv without leaving the current
 directory I wrote
 ```bash
 wc -w ../../Unix/DataFiles/CodonTable.tsv
@@ -45,7 +45,7 @@ my output was
 ```bash
 195 ../../Unix/DataFiles/CodonTable.tsv
 ```
-#4. I did not leave the directory so the code I wrote to find the last codon reported was
+# 4. I did not leave the directory so the code I wrote to find the last codon reported was
 ```bash
 tail ../../Unix/DataFiles/CodonTable.tsv
 ```
