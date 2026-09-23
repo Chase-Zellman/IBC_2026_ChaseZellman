@@ -1,26 +1,30 @@
 # Shebang
 #!/usr/bin/env python3
 
-codon_dict = {AAA, AAC, AAG, AAT, ACA, ACC, ACG, ACT, AGA, AGC, AGG, AGT, ATA, ATC, ATG, ATT, CAA, CAC, CAG, CAT, CCA, CCC, CCG, CCT,
-CGA, CGC, CGG, CGT, CTA, CTC, CTG, CTT, GAA, GAC, GAG, GAT, GCA, GCC, GCG, GCT, GGA, GGC, GGG, GGT, GTA, GTC, GTG, GTT, TAA, TAC, TAG,
-TAT, TCA, TCC, TCG, TCT, TGA, TGC, TGG, TGT, TTA, TTC, TTG, TTT}
+codon_symbol_dict = {'AAA': 'K', 'AAC': 'N','AAG': 'K', 'AAT': 'N', 'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACT': 'T', 'AGA': 'R', 'AGC': 'S', 'AGG': 'R', 'AGT': 'S', 'ATA': 'I', 'ATC': 'I', 'ATG': 'M',
+'ATT': 'I', 'CAA': 'Q', 'CAC': 'H', 'CAG': 'Q', 'CAT': 'H', 'CCA': 'P', 'CCC': 'P', 'CCG': 'P', 'CCT': 'P', 'CGA': 'R', 'CGC': 'R','CGG': 'R', 'CGT': 'R', 'CTA': 'L', 'CTC': 'L', 'CTG': 'L', 'CTT': 'L',
+'GAA': 'E', 'GAC': 'D', 'GAG': 'E', 'GAT': 'D', 'GCA': 'A', 'GCC': 'A', 'GCG': 'A', 'GCT': 'A', 'GGA': 'G', 'GGC': 'G', 'GGG': 'G', 'GGT': 'G', 'GTA': 'V', 'GTC': 'V', 'GTG': 'V', 'GTT': 'V', 'TAA': 'O',
+'TAC': 'Y', 'TAG': 'O', 'TAT': 'Y', 'TCA': 'S', 'TCC': 'S', 'TCG': 'S', 'TCT': 'S', 'TGA': 'O', 'TGC': 'C', 'TGG': 'W', 'TGT': 'C', 'TTA': 'L', 'TTC': 'F', 'TTG': 'L', 'TTT': 'F'}
 
-symbol_values = {}
+symbol_values = {'K': 'Lys', 'N': 'Asn', 'K': 'Lys', 'N': 'Asn','T': 'Thr', 'T': 'Thr', 'T': 'Thr', 'T': 'Thr', 'R': 'Arg', 'S': 'Ser', 'R': 'Arg', 'S': 'Ser', 'I': 'Ile', 'I': 'Ile', 'M': 'Met', 
+'I': 'Ile', 'Q': 'Gln', 'H': 'His', 'Q': 'Gln', 'H': 'His', 'P': 'Pro', 'P': 'Pro', 'P': 'Pro', 'P': 'Pro', 'R': 'Arg', 'R': 'Arg', 'R': 'Arg', 'R': 'Arg', 'L': 'Leu', 'L': 'Leu', 'L': 'Leu', 'L': 'Leu', 
+'E': 'Glu', 'D': 'Asp', 'E': 'Glu', 'D': 'Asp', 'A': 'Ala', 'A': 'Ala', 'A': 'Ala', 'A': 'Ala', 'G': 'Gly', 'G': 'Gly', 'G': 'Gly', 'G': 'Gly', 'V': 'Val', 'V': 'Val', 'V': 'Val', 'V': 'Val', 'O': 'Stp',
+'Y': 'Tyr', 'S': 'Ser', 'S': 'Ser', 'S': 'Ser', 'S': 'Ser', 'O': 'Stp', 'C': 'Cys', 'W': 'Trp', 'C': 'Cys', 'L': 'Leu', 'F': 'Phe', 'L': 'Leu', 'F': 'Phe'}
 
-amino_acid = {Lys, Asn, Lys, Asn, Thr, Thr, Thr, Thr, Arg, Ser, Arg, Ser, Ile, Ile, Met, Ile, Gln, His, Gln, His, Pro, Pro, Pro, Pro, Arg,
-Arg, Arg, Arg, Leu, Leu, Leu, Leu, Glu, Asp, Glu, Asp, Ala, Ala, Ala, Ala, Gly, Gly, Gly, Gly, Val, Val, Val, Val, Stp, Tyr, Stp, Tyr, Ser,
-,Ser, Ser, Ser, Stp, Cys, Trp, Cys, Leu, Phe, Leu, Phe}
 
-
-seq = "CTA GGA GTG ATT TCG"
+seq = "CTA GCA GTG ATT TCG"
 codons = seq.split(" ")
 
-print(codons)
+amino_seq = []
 
-for codons in codon_dict:
-    if codons == codon_dict:
-        match = codon_dict[codons]
+for codon in codons:
+    if codon in codon_symbol_dict:
+        symbol = codon_symbol_dict[codon]
+        amino_acid = symbol_values[symbol]
+        amino_seq.append(amino_acid)
     else:
-        match = "No match found"
+        print("No match found")
+
+print(amino_seq)
 
 
