@@ -35,3 +35,9 @@ for codon in codons:
 print(amino_seq)
 
 
+<<<<<<< HEAD
+
+
+=======
+
+>>>>>>> be2db579bb08afbfc1b0ce2ee8309068c3cb5162
