@@ -16,3 +16,5 @@ with open("Turkey_transcripts_15.fasta") as infile, open("gc_content.txt", "w") 
     for gene_id, seq in genes:
         gc = (seq.count("G") + seq.count("C")) /len(seq)
         outfile.write(gene_id+"\t"+str(gc)+"\n")
+
+
