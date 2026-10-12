@@ -1,6 +1,29 @@
 import matplotlib.pyplot as plt
+import re
+import csv
+import pdb
+
 # let plots be produced within the IPython notebook
-%matplotlib inline
+#%matplotlib inline
+
+zip_find = []
+with open("pubmed_results.txt", "r") as f:
+    for line in f:
+        zip_find = zip_find + re.findall(r'\d{5}', line)
+
+zip_code = []
+zip_long = []
+zip_lat = []
+zip_count = []
+with open("zipcodes_coordinates.txt", "r") as f:
+    reader = csv.reader(f)
+    next(reader)
+    for row in reader:
+        if row[0] in zip_find:
+            zip_code.append(row[0])
+            zip_long.append(float(row[1]))
+            zip_lat.append(float(row[2]))
+            zip_count.append(zip_find.count(row[0]))
 
 plt.scatter(zip_long, zip_lat, s = zip_count, c= zip_count)
 plt.colorbar()
