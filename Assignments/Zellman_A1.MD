@@ -9,7 +9,8 @@ cp Gesquiere2011_data.csv ../../IBC_2026_ChaseZellman/Assignments/
 ```
 
 ### B & C
-For this code we have our bash shebang to start the code then File_name and ID are my variables like asked. They take in argument 1 and 2 as their values respectively. Then the code is a simple cut and grep. It takes the first column and finds how many times the number you give it appears. Then it out puts the number you asked for and how many times it appears
+For this code we have our bash shebang to start the code then File_name and ID are my variables like asked. They take in argument 1 and 2 as their values respectively. Then the code is a simple cut and grep. It takes the first column and finds how many times the number you give it appears. Then it out puts the number you asked for and how many times it appears.
+
 For clarity ID_Num has 
 ```Bash
 $()
