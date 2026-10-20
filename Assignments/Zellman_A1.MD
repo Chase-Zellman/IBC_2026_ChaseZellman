@@ -15,11 +15,11 @@ For clarity ID_Num has
 ```Bash
 $()
 ```
-with the code in the parenthesis that allows you to assign a command to a variable as a value which is more common in python, but this is the bash syntax. Also, variables are called with 
+with the code in the parenthesis that allows you to assign a commands output to a variable. Also, variables are called with 
 ```Bash
-${} 
+"${}" 
 ```
-I prefer this over lots of "" which can be used to also call variables. 
+I prefer this over lots of " "$" " which can make things confusing for me when lots of parenthesis are used
 
 ```Bash
 #!/usr/bin/bash
@@ -34,9 +34,9 @@ echo "${ID} appears ${ID_num} Times!"
 ```
 
 ### D
-Starting here we assign ID_Count to a command which here we use the tail to get rid of the header extremely similar to one of our activities in class a few weeks ago. Then it cuts the first column, sorts by number and uniqueness to get each unique one then prints how many numbers there are. 
+Starting here we assign ID_Count to a command which here we use the tail to get rid of the header extremely similar to one of our activities in class a few weeks ago. Then it cuts the first column, sorts by number and uniqueness to get each unique one. 
 After that an empty file is created in CSV format and we put in our headers.
-Then the main chunk of the code while reading ID_Count, take the first column, count each unique line that matches ID count, then it adds the number and the number of times it was sampled into our file. Finaly it loops back through the list.
+Then the main chunk of the code while reading ID_Count, take the first column, count each unique line that matches ID count, then it adds the number and the number of times it was sampled into our file. Finaly, it loops back through the list to the next number.
 ```Bash
 #!/usr/bin/bash
 
@@ -46,7 +46,7 @@ echo "MaleID,Num_samples" > Num_samples.csv
 
 while read -r ID_Count
     do ID_Times_Count=$( cut -f 1 Gesquiere2011_data.csv | grep -x -c "${ID_Count}")
-        echo "${ID_Count}, ${ID_Times_Count}" >> Num_samples.csv
+        echo "${ID_Count},${ID_Times_Count}" >> Num_samples.csv
 done < <(tail -n +2 Gesquiere2011_data.csv | cut -f 1 | sort -n -u)
 
 echo "Script Finished!"
@@ -81,8 +81,8 @@ python -m wordcloud --text isolation.txt --imagefile isolation_cloud.png
 ```
 
 ### E
-![Sterility_Cloud]("C:\Comp_Bio\IntroBiolComp-2026\Assignment1\sterility_cloud.png")
-![Isolation_Cloud]("C:\Comp_Bio\IntroBiolComp-2026\Assignment1\isolation_cloud.png")
+![Sterility_Cloud](sterility_cloud.png)
+![Isolation_Cloud](isolation_cloud.png)
 
 It is hard to tell based on the word cloud but in both clouds, however I would argue that the Isolation word cloud provides more evidence for Darwin then the Sterility. We see isolation as the largest concentration of words but then also a few others like favorable, which can be linked to favorable mates, traits, etc. Is important for speciation. Along with Natural selection being another important concept. Then in smaller text we see immigration, production, competition all of which affect gene flow and fitness and that can increase or decrease speciation events and evolution. In sterility it is harder to deduct concepts, sterility is the largest word, followed by others like hybrid, species, varieties, difference, and more. All of which point to more of the same thing. 
 
@@ -98,7 +98,7 @@ Day_list = [
     "Fith",
     "Sixth",
     "Seventh",
-    "Eight",
+    "Eighth",
     "Ninth",
     "Tenth",
     "Eleventh",
@@ -111,7 +111,7 @@ Verse_list = [
     "3 French Hens",
     "4 Colly Birds",
     "5 Gold Rings",
-    "6 Geeese-a-Laying", 
+    "6 Geese-a-Laying", 
     "7 Swans-a-Swimming",
     "8 Maids-a-Milking",
     "9 Ladies Dancing",
@@ -123,9 +123,8 @@ Verse_list = [
 
 Then using my two lists for the i or a numeric value in the length of Day_list (12 days), print our starting statement and using whatever days number we are on print that day from the list. 
 One important note here is the use of the f string on the print statement. This allows you to have your print statement and call variables inside of it to avoid lots of "" and + in your prints
-Then we create a nested for loop like shown in the directions to go through the verses. The three values starting with i matches the i in the first loop to match the day, then -1 is the range so it will go down to 0, and then the -1 is what it counts by.
-Example: i=3 means were on day 4 because lists start at 0 in python, then were going to go to 0 because we have -1 then it's going to count by -1 so go to day 3 then 2 etc. to go backwards to fill in the previous verses.
-Finaly, we print the rest of the verses and at the end "\n" to make a new line
+Then we create a nested for loop like shown in the directions to go through the verses. The three values starting with i matches the i in the first loop to match the day, then -1 is the stop so it will go down to 0, and then the -1 is what it counts by to go backwards to fill in the previous verses. The if j ==1 prints the Turtle doves line which has the , and that was in the other file.
+Finally, we print the rest of the verses and at the end "\n" to make a new line
 ```python
 for i in range(len(Day_list)):
     print(f"On the {Day_list[i]} day of Christmas my true love gave to me:")
