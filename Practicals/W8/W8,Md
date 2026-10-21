@@ -1,0 +1,20 @@
+# Week 8
+## Disease Risk
+### 1
+First makes the table with read.table from the file, the seperater is a space and there are headings
+Then it gets maximum sum of the clolumns we want
+```R
+#Disease Risk
+#1
+Euro_geno <- read.table("H938_Euro_chr6.geno", sep = " ", h=T)
+str(Euro_geno)
+
+maxsum <- Euro_geno$nA1A1 + Euro_geno$nA1A2 + Euro_geno$nA2A2
+max(maxsum)
+```
+
+## 2
+This time we are using rowSums() which we add max to, to get the max number and then the table we are taking them from "Euro_geno" which is whatI
+```R
+max(rowSums(Euro_geno[, 5:7], na.rm = T))
+```
