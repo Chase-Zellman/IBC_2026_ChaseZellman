@@ -135,3 +135,11 @@ for i in range(len(Day_list)):
             print(Verse_list[j])
     print("\n")
 ```
+
+## Submission
+```
+git add
+git status
+git commit -m "Submitted work"
+git push
+```
